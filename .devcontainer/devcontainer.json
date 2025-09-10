@@ -1,0 +1,46 @@
+{
+  "name": "IMT - Container",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:24-bookworm",
+  "features": {},
+  "postCreateCommand": "npm install -g pnpm",
+  "forwardPorts": [3000, 3001, 3002, 3003, 3004, 3005, 3006],
+  "portsAttributes": {
+    "5000": {
+      "label": "Dev Server",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "typescript.tsdk": "node_modules/typescript/lib",
+        "files.associations": {
+          "wrangler.json": "jsonc"
+        },
+        "tailwindCSS.experimental.classRegex": [
+          ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
+        ],
+        "tailwindCSS.classFunctions": [
+          "cva",
+          "tv",
+          "tw",
+          "clsx",
+          "tw\\.[a-z-]+"
+        ],
+        "[svelte]": {
+          "editor.defaultFormatter": "svelte.svelte-vscode"
+        }
+      },
+      "extensions": [
+        "svelte.svelte-vscode",
+        "streetsidesoftware.code-spell-checker",
+        "usernamehw.errorlens",
+        "formulahendry.auto-rename-tag",
+        "formulahendry.auto-close-tag",
+        "bradlc.vscode-tailwindcss",
+        "mhutchie.git-graph",
+        "eamodio.gitlens"
+      ]
+    }
+  }
+}
