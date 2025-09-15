@@ -3,10 +3,14 @@
   "image": "mcr.microsoft.com/devcontainers/typescript-node:24-bookworm",
   "features": {},
   "postCreateCommand": "npm install -g pnpm",
-  "forwardPorts": [3000, 3001, 3002, 3003, 3004, 3005, 3006],
+  "forwardPorts": [5173, 6006],
   "portsAttributes": {
-    "5000": {
+    "5173": {
       "label": "Dev Server",
+      "onAutoForward": "notify"
+    },
+    "6006": {
+      "label": "Storybook Dev Server",
       "onAutoForward": "notify"
     }
   },
@@ -32,6 +36,9 @@
         }
       },
       "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "inlang.vs-code-extension",
         "svelte.svelte-vscode",
         "streetsidesoftware.code-spell-checker",
         "usernamehw.errorlens",
