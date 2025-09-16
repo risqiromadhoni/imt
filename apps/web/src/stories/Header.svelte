@@ -1,6 +1,6 @@
 <script lang="ts">
 	import './header.css';
-	import Button from './Button.svelte';
+	import { Button } from '$lib/components/ui/button';
 
 	interface Props {
 		user?: { name: string };
@@ -35,10 +35,10 @@
 				<span class="welcome">
 					Welcome, <b>{user.name}</b>!
 				</span>
-				<Button size="small" onclick={onLogout} label="Log out" />
+				<Button size="sm" onclick={onLogout}>Log out</Button>
 			{:else}
-				<Button size="small" onclick={onLogin} label="Log in" />
-				<Button primary size="small" onclick={onCreateAccount} label="Sign up" />
+				<Button size="sm" onclick={onLogin}>Log in</Button>
+				<Button variant="default" size="sm" onclick={onCreateAccount}>Sign up</Button>
 			{/if}
 		</div>
 	</div>
