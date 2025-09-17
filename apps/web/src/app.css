@@ -21,10 +21,11 @@
 
 	--animate-rippling: rippling var(--duration, 600ms) ease-out;
 	@keyframes rippling {
-		0% {
-			opacity: 1;
+		from {
+			transform: scale(0);
+			opacity: 0.35;
 		}
-		100% {
+		to {
 			transform: scale(2);
 			opacity: 0;
 		}

@@ -1,6 +1,6 @@
 <script module>
 	import { defineMeta } from '@storybook/addon-svelte-csf';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
+	import * as DropdownMenu from '.';
 	import { Button } from '$lib/components/ui/button';
 
 	// More on how to set up stories at: https://storybook.js.org/docs/writing-stories

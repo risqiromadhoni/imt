@@ -35,7 +35,7 @@ export const buttonVariants = tv({
 	defaultVariants: {
 		variant: 'default',
 		size: 'default',
-		radius: 'default',
+		radius: 'full',
 		fullWidth: false,
 		disabled: false
 	}

@@ -3,11 +3,11 @@
   
   interface Props {
     ripples: RippleType[]
-    /** @default "#fff" */
+    /** @default "currentColor" */
     rippleColor?: string;
   }
 
-  let { ripples, rippleColor = "#fff" }: Props = $props()
+  let { ripples, rippleColor = "currentColor" }: Props = $props()
 </script>
 
 <span class="pointer-events-none absolute inset-0">

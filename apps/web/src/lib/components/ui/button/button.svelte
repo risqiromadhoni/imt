@@ -10,13 +10,15 @@
 		class: className,
 		variant = 'default',
 		size = 'default',
-		radius = 'default',
+		radius = 'full',
 		fullWidth = false,
 		ref = $bindable(null),
 		href = undefined,
 		type = 'button',
 		disabled = false,
 		onclick: onClick,
+		onpointerup: onPointerup,
+		onpointerdown: onPointerdown,
 		children,
 		...restProps
 	}: ButtonProps = $props();
@@ -28,6 +30,14 @@
 		ripples.onCreateRipples(e);
 		onClick?.(e as MouseEvent & { currentTarget: EventTarget & HTMLButtonElement });
 	};
+	let onpointerup = (e: PointerEvent) => {
+		onPointerup && ripples.onCreateRipples(e);
+		onPointerup?.(e as PointerEvent & { currentTarget: EventTarget & HTMLButtonElement })
+	}
+	let onpointerdown = (e: PointerEvent) => {
+		onPointerdown && ripples.onCreateRipples(e);
+		onPointerdown?.(e as PointerEvent & { currentTarget: EventTarget & HTMLButtonElement })
+	}
 </script>
 
 {#if href}
@@ -40,10 +50,12 @@
 		role={disabled ? 'link' : undefined}
 		tabindex={disabled ? -1 : undefined}
 		{onclick}
+		{onpointerup}
+		{onpointerdown}
 		{...restProps}
 	>
 		{@render children?.()}
-		<Ripple ripples={$ripples} rippleColor="var(--color-bluebonnet-50)" />
+		<Ripple ripples={$ripples} />
 	</a>
 {:else}
 	<button
@@ -53,9 +65,11 @@
 		{type}
 		{disabled}
 		{onclick}
+		{onpointerup}
+		{onpointerdown}
 		{...restProps}
 	>
 		{@render children?.()}
-		<Ripple ripples={$ripples} rippleColor="var(--color-bluebonnet-50)" />
+		<Ripple ripples={$ripples} />
 	</button>
 {/if}

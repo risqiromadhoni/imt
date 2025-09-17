@@ -1,6 +1,6 @@
-<script module>
+<script lang="ts" module>
 	import { defineMeta } from '@storybook/addon-svelte-csf';
-	import { Button } from '$lib/components/ui/button';
+	import Button from './button.svelte';
 	import { fn } from 'storybook/test';
 	import Icon from '@iconify/svelte';
 
@@ -23,7 +23,7 @@
 			radius: {
 				control: { type: 'select' },
 				options: ['default', 'full'],
-				defaultValue: 'default'
+				defaultValue: 'full'
 			},
 			fullWidth: {
 				control: {
